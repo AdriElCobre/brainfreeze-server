@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.brainfreeze_brainfreeze-server_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>bean.specificimplementation.Plataformajuego</class>
+    <class>bean.specificimplementation.Historia</class>
+    <class>bean.specificimplementation.Clase</class>
+    <class>bean.specificimplementation.Genero</class>
+    <class>bean.specificimplementation.Comentarioguia</class>
+    <class>bean.specificimplementation.Comentarionoticia</class>
+    <class>bean.specificimplementation.GeneroJuego</class>
+    <class>bean.specificimplementation.Administrador</class>
+    <class>bean.specificimplementation.Plataforma</class>
+    <class>bean.specificimplementation.Juego</class>
+    <class>bean.specificimplementation.Usuario</class>
+    <class>bean.specificimplementation.Personaje</class>
+    <class>bean.specificimplementation.Noticia</class>
+    <class>bean.specificimplementation.Guia</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/brainfreeze?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="bitnami"/>
+    </properties>
+  </persistence-unit>
+</persistence>
