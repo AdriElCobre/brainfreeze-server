@@ -5,7 +5,6 @@
  */
 package brainfreeze.service.specificimplementation;
 
-
 import brainfreeze.bean.helper.MetaBeanHelper;
 import brainfreeze.bean.specificimplementation.TipousuarioSpecificBeanImplementation;
 import brainfreeze.bean.specificimplementation.UsuarioSpecificBeanImplementation;
@@ -17,7 +16,7 @@ public class GuiaSpecificServiceImplementation extends TableGenericServiceImplem
     public GuiaSpecificServiceImplementation(HttpServletRequest request) {
         super(request);
     }
-    
+
     @Override
     protected Boolean checkPermission(String strMethodName) {
         MetaBeanHelper oUsuarioBean = (MetaBeanHelper) oRequest.getSession().getAttribute("user");
@@ -50,6 +49,10 @@ public class GuiaSpecificServiceImplementation extends TableGenericServiceImplem
                             return true;
                         case "getcount":
                             return true;
+                        case "getpagex":
+                            return true;
+                        case "getcountx":
+                            return true;
                     }
                 } else {
                     return false;
@@ -60,7 +63,5 @@ public class GuiaSpecificServiceImplementation extends TableGenericServiceImplem
         }
         return false;
     }
-    
 
-    
 }

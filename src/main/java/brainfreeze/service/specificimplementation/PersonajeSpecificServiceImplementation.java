@@ -16,10 +16,8 @@ public class PersonajeSpecificServiceImplementation extends TableGenericServiceI
     public PersonajeSpecificServiceImplementation(HttpServletRequest request) {
         super(request);
     }
-    
-    
-    
-@Override
+
+    @Override
     protected Boolean checkPermission(String strMethodName) {
         MetaBeanHelper oUsuarioBean = (MetaBeanHelper) oRequest.getSession().getAttribute("user");
         if (oUsuarioBean != null) {
@@ -51,6 +49,10 @@ public class PersonajeSpecificServiceImplementation extends TableGenericServiceI
                             return true;
                         case "getcount":
                             return true;
+                        case "getpagex":
+                            return true;
+                        case "getcountx":
+                            return true;
                     }
                 } else {
                     return false;
@@ -61,5 +63,5 @@ public class PersonajeSpecificServiceImplementation extends TableGenericServiceI
         }
         return false;
     }
-    
+
 }

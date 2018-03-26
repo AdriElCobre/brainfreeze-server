@@ -16,7 +16,7 @@ public class NoticiaSpecificServiceImplementation extends TableGenericServiceImp
     public NoticiaSpecificServiceImplementation(HttpServletRequest request) {
         super(request);
     }
-    
+
     @Override
     protected Boolean checkPermission(String strMethodName) {
         MetaBeanHelper oUsuarioBean = (MetaBeanHelper) oRequest.getSession().getAttribute("user");
@@ -49,6 +49,10 @@ public class NoticiaSpecificServiceImplementation extends TableGenericServiceImp
                             return true;
                         case "getcount":
                             return true;
+                        case "getpagex":
+                            return true;
+                        case "getcountx":
+                            return true;
                     }
                 } else {
                     return false;
@@ -59,7 +63,5 @@ public class NoticiaSpecificServiceImplementation extends TableGenericServiceImp
         }
         return false;
     }
-    
 
-    
 }

@@ -16,7 +16,7 @@ public class GenerojuegoSpecificServiceImplementation extends TableGenericServic
     public GenerojuegoSpecificServiceImplementation(HttpServletRequest request) {
         super(request);
     }
-    
+
     @Override
     protected Boolean checkPermission(String strMethodName) {
         MetaBeanHelper oUsuarioBean = (MetaBeanHelper) oRequest.getSession().getAttribute("user");
@@ -49,6 +49,10 @@ public class GenerojuegoSpecificServiceImplementation extends TableGenericServic
                             return true;
                         case "getcount":
                             return true;
+                        case "getpagex":
+                            return true;
+                        case "getcountx":
+                            return true;
                     }
                 } else {
                     return false;
@@ -59,6 +63,5 @@ public class GenerojuegoSpecificServiceImplementation extends TableGenericServic
         }
         return false;
     }
-    
 
 }

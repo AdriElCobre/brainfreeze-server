@@ -39,7 +39,6 @@ import brainfreeze.bean.publicinterface.GenericBeanInterface;
 import brainfreeze.bean.specificimplementation.ClaseSpecificBeanImplementation;
 import brainfreeze.bean.specificimplementation.ComentarioguiaSpecificBeanImplementation;
 import brainfreeze.bean.specificimplementation.ComentarionoticiaSpecificBeanImplementation;
-import brainfreeze.bean.specificimplementation.GeneroSpecificBeanImplementation;
 import brainfreeze.bean.specificimplementation.GenerojuegoSpecificBeanImplementation;
 import brainfreeze.bean.specificimplementation.GuiaSpecificBeanImplementation;
 import brainfreeze.bean.specificimplementation.HistoriaSpecificBeanImplementation;
@@ -71,9 +70,6 @@ public class BeanFactory {
                 break;
             case "comentarionoticia":
                 oBean = new ComentarionoticiaSpecificBeanImplementation();
-                break;
-            case "centro":
-                oBean = new GeneroSpecificBeanImplementation();
                 break;
             case "generojuego":
                 oBean = new GenerojuegoSpecificBeanImplementation();

@@ -40,10 +40,10 @@ public class PersonajeSpecificBeanImplementation extends TableGenericBeanImpleme
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedName,
             RegexHelp = RegexConstants.capitalizedName_Help,
-            IsForeignKeyDescriptor = false,
+            IsForeignKeyDescriptor = true,
             Width = 3,
             MaxLength = 100,
-            IsVisible = false
+            IsVisible = true
     )
     private String nombre;
     
@@ -70,7 +70,7 @@ public class PersonajeSpecificBeanImplementation extends TableGenericBeanImpleme
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsForeignKeyDescriptor = false
     )
     private String faccion = "";
     
@@ -105,7 +105,7 @@ public class PersonajeSpecificBeanImplementation extends TableGenericBeanImpleme
             LongName = "Clase",
             Description = "Clase del personaje",
             Type = EnumHelper.FieldType.ForeignObject,
-            IsRequired = true,
+            
             References = "clase",
             Width = 4
     )

@@ -5,7 +5,6 @@
  */
 package brainfreeze.bean.specificimplementation;
 
-
 import brainfreeze.bean.genericimplementation.TableGenericBeanImplementation;
 import brainfreeze.bean.helper.MetaBeanHelper;
 import brainfreeze.bean.meta.publicinterface.MetaObjectBeanInterface;
@@ -15,12 +14,10 @@ import brainfreeze.helper.EnumHelper;
 import brainfreeze.helper.constant.RegexConstants;
 import java.util.Date;
 
-
 /**
  *
  * @author a024441493z
  */
-
 @MetaObjectBeanInterface(
         TableName = "Guia",
         SingularDescription = "Guia",
@@ -45,8 +42,7 @@ public class GuiaSpecificBeanImplementation extends TableGenericBeanImplementati
             MaxLength = 100
     )
     private Date fechacreacion;
-    
-    
+
     @Expose
     @MetaPropertyBeanInterface(
             ShortName = "Titulo",
@@ -59,8 +55,7 @@ public class GuiaSpecificBeanImplementation extends TableGenericBeanImplementati
             IsForeignKeyDescriptor = true
     )
     private String titulo = "";
-    
-    
+
     @Expose
     @MetaPropertyBeanInterface(
             ShortName = "Texto",
@@ -70,11 +65,10 @@ public class GuiaSpecificBeanImplementation extends TableGenericBeanImplementati
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsVisible = false
     )
     private String texto = "";
-    
-    
+
     @Expose(serialize = false)
     @MetaPropertyBeanInterface(
             Type = EnumHelper.FieldType.ForeignId
@@ -92,8 +86,7 @@ public class GuiaSpecificBeanImplementation extends TableGenericBeanImplementati
             Width = 4
     )
     private MetaBeanHelper obj_juego = null;
-    
-    
+
     @Expose(serialize = false)
     @MetaPropertyBeanInterface(
             Type = EnumHelper.FieldType.ForeignId
@@ -111,6 +104,16 @@ public class GuiaSpecificBeanImplementation extends TableGenericBeanImplementati
             Width = 4
     )
     private MetaBeanHelper obj_usuario = null;
+
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Comentario guia",
+            LongName = "Comentarios de esta guia",
+            Description = "Comentarios que escriben sobre la guia",
+            Type = EnumHelper.FieldType.Link,
+            References = "comentarioguia"
+    )
+    private Integer link_comnetarioguia = null;
 
     public GuiaSpecificBeanImplementation() {
     }
@@ -175,9 +178,14 @@ public class GuiaSpecificBeanImplementation extends TableGenericBeanImplementati
         this.obj_usuario = obj_usuario;
     }
 
+    public Integer getLink_comnetarioguia() {
+        return link_comnetarioguia;
+    }
+
+    public void setLink_comnetarioguia(Integer link_comnetarioguia) {
+        this.link_comnetarioguia = link_comnetarioguia;
+    }
     
     
-    
-    
-    
+
 }

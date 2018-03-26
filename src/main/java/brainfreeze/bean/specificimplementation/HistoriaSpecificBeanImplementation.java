@@ -19,9 +19,9 @@ import java.util.Date;
  * @author a024441493z
  */
 @MetaObjectBeanInterface(
-        TableName = "historia",
-        SingularDescription = "Historia",
-        PluralDescription = "Historias",
+        TableName = "versión",
+        SingularDescription = "Version",
+        PluralDescription = "Versiones",
         Icon = "fa fa-user",
         Type = EnumHelper.SourceType.Table
 )
@@ -30,9 +30,9 @@ public class HistoriaSpecificBeanImplementation extends TableGenericBeanImplemen
 
     @Expose
     @MetaPropertyBeanInterface(
-            ShortName = "Hist",
-            LongName = "Historia de un juego",
-            Description = "Historia que muestra todas las etapas de un juego",
+            ShortName = "Versión",
+            LongName = "Versión del juego",
+            Description = "Versión en la que se encuentra el juego",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
@@ -50,7 +50,7 @@ public class HistoriaSpecificBeanImplementation extends TableGenericBeanImplemen
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedName,
             RegexHelp = RegexConstants.capitalizedName_Help,
-            IsForeignKeyDescriptor = true,
+            IsForeignKeyDescriptor = false,
             Width = 3,
             MaxLength = 100
     )

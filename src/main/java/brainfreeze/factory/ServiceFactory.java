@@ -37,7 +37,6 @@ import brainfreeze.helper.EncodingHelper;
 import brainfreeze.service.specificimplementation.ClaseSpecificServiceImplementation;
 import brainfreeze.service.specificimplementation.ComentarioguiaSpecificServiceImplementation;
 import brainfreeze.service.specificimplementation.ComentarionoticiaSpecificServiceImplementation;
-import brainfreeze.service.specificimplementation.GeneroSpecificServiceImplementation;
 import brainfreeze.service.specificimplementation.GenerojuegoSpecificServiceImplementation;
 import brainfreeze.service.specificimplementation.GuiaSpecificServiceImplementation;
 import brainfreeze.service.specificimplementation.HistoriaSpecificServiceImplementation;
@@ -112,7 +111,7 @@ public class ServiceFactory {
                     case "checklogin":
                         oReplyBean = oUsuarioService.checklogin();
                         break;
-                    
+
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -145,44 +144,50 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oTipousuarioService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oTipousuarioService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oTipousuarioService.getPageX();
+                        break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
             case "clase":
-                ClaseSpecificServiceImplementation oGrupoService = new ClaseSpecificServiceImplementation(oRequest);
+                ClaseSpecificServiceImplementation oClase = new ClaseSpecificServiceImplementation(oRequest);
                 switch (op) {
-                    
+
                     case "getmetadata":
-                        oReplyBean = oGrupoService.getMetaData();
+                        oReplyBean = oClase.getMetaData();
                         break;
                     case "getobjectmetadata":
-                        oReplyBean = oGrupoService.getObjectMetaData();
+                        oReplyBean = oClase.getObjectMetaData();
                         break;
                     case "getpropertiesmetadata":
-                        oReplyBean = oGrupoService.getPropertiesMetaData();
+                        oReplyBean = oClase.getPropertiesMetaData();
                         break;
                     case "get":
-                        oReplyBean = oGrupoService.get();
+                        oReplyBean = oClase.get();
                         break;
                     case "set":
-                        oReplyBean = oGrupoService.set();
+                        oReplyBean = oClase.set();
                         break;
                     case "remove":
-                        oReplyBean = oGrupoService.remove();
+                        oReplyBean = oClase.remove();
                         break;
                     case "getpage":
-                        oReplyBean = oGrupoService.getPage();
+                        oReplyBean = oClase.getPage();
                         break;
                     case "getcount":
-                        oReplyBean = oGrupoService.getCount();
+                        oReplyBean = oClase.getCount();
                         break;
                     case "getcountx":
-                        oReplyBean = oGrupoService.getCountX();
+                        oReplyBean = oClase.getCountX();
                         break;
                     case "getpagex":
-                        oReplyBean = oGrupoService.getPageX();
+                        oReplyBean = oClase.getPageX();
                         break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
@@ -190,37 +195,37 @@ public class ServiceFactory {
                 }
                 break;
             case "comentarioguia":
-                ComentarioguiaSpecificServiceImplementation oCursoService = new ComentarioguiaSpecificServiceImplementation(oRequest);
+                ComentarioguiaSpecificServiceImplementation oComentarioGuia = new ComentarioguiaSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
-                        oReplyBean = oCursoService.getMetaData();
+                        oReplyBean = oComentarioGuia.getMetaData();
                         break;
                     case "getobjectmetadata":
-                        oReplyBean = oCursoService.getObjectMetaData();
+                        oReplyBean = oComentarioGuia.getObjectMetaData();
                         break;
                     case "getpropertiesmetadata":
-                        oReplyBean = oCursoService.getPropertiesMetaData();
+                        oReplyBean = oComentarioGuia.getPropertiesMetaData();
                         break;
                     case "get":
-                        oReplyBean = oCursoService.get();
+                        oReplyBean = oComentarioGuia.get();
                         break;
                     case "set":
-                        oReplyBean = oCursoService.set();
+                        oReplyBean = oComentarioGuia.set();
                         break;
                     case "remove":
-                        oReplyBean = oCursoService.remove();
+                        oReplyBean = oComentarioGuia.remove();
                         break;
                     case "getpage":
-                        oReplyBean = oCursoService.getPage();
+                        oReplyBean = oComentarioGuia.getPage();
                         break;
                     case "getcount":
-                        oReplyBean = oCursoService.getCount();
+                        oReplyBean = oComentarioGuia.getCount();
                         break;
                     case "getcountx":
-                        oReplyBean = oCursoService.getCountX();
+                        oReplyBean = oComentarioGuia.getCountX();
                         break;
                     case "getpagex":
-                        oReplyBean = oCursoService.getPageX();
+                        oReplyBean = oComentarioGuia.getPageX();
                         break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
@@ -228,75 +233,37 @@ public class ServiceFactory {
                 }
                 break;
             case "comentarionoticia":
-                ComentarionoticiaSpecificServiceImplementation oCentrosanitarioService = new ComentarionoticiaSpecificServiceImplementation(oRequest);
+                ComentarionoticiaSpecificServiceImplementation oComentarioNoticia = new ComentarionoticiaSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
-                        oReplyBean = oCentrosanitarioService.getMetaData();
+                        oReplyBean = oComentarioNoticia.getMetaData();
                         break;
                     case "getobjectmetadata":
-                        oReplyBean = oCentrosanitarioService.getObjectMetaData();
+                        oReplyBean = oComentarioNoticia.getObjectMetaData();
                         break;
                     case "getpropertiesmetadata":
-                        oReplyBean = oCentrosanitarioService.getPropertiesMetaData();
+                        oReplyBean = oComentarioNoticia.getPropertiesMetaData();
                         break;
                     case "get":
-                        oReplyBean = oCentrosanitarioService.get();
+                        oReplyBean = oComentarioNoticia.get();
                         break;
                     case "set":
-                        oReplyBean = oCentrosanitarioService.set();
+                        oReplyBean = oComentarioNoticia.set();
                         break;
                     case "remove":
-                        oReplyBean = oCentrosanitarioService.remove();
+                        oReplyBean = oComentarioNoticia.remove();
                         break;
                     case "getpage":
-                        oReplyBean = oCentrosanitarioService.getPage();
+                        oReplyBean = oComentarioNoticia.getPage();
                         break;
                     case "getcount":
-                        oReplyBean = oCentrosanitarioService.getCount();
+                        oReplyBean = oComentarioNoticia.getCount();
                         break;
                     case "getcountx":
-                        oReplyBean = oCentrosanitarioService.getCountX();
+                        oReplyBean = oComentarioNoticia.getCountX();
                         break;
                     case "getpagex":
-                        oReplyBean = oCentrosanitarioService.getPageX();
-                        break;
-                    default:
-                        oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
-                        break;
-                }
-                break;
-            case "genero":
-                GeneroSpecificServiceImplementation oCentroService = new GeneroSpecificServiceImplementation(oRequest);
-                switch (op) {
-                    case "getmetadata":
-                        oReplyBean = oCentroService.getMetaData();
-                        break;
-                    case "getobjectmetadata":
-                        oReplyBean = oCentroService.getObjectMetaData();
-                        break;
-                    case "getpropertiesmetadata":
-                        oReplyBean = oCentroService.getPropertiesMetaData();
-                        break;
-                    case "get":
-                        oReplyBean = oCentroService.get();
-                        break;
-                    case "set":
-                        oReplyBean = oCentroService.set();
-                        break;
-                    case "remove":
-                        oReplyBean = oCentroService.remove();
-                        break;
-                    case "getpage":
-                        oReplyBean = oCentroService.getPage();
-                        break;
-                    case "getcount":
-                        oReplyBean = oCentroService.getCount();
-                        break;
-                    case "getcountx":
-                        oReplyBean = oCentroService.getCountX();
-                        break;
-                    case "getpagex":
-                        oReplyBean = oCentroService.getPageX();
+                        oReplyBean = oComentarioNoticia.getPageX();
                         break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
@@ -304,31 +271,37 @@ public class ServiceFactory {
                 }
                 break;
             case "generojuego":
-                GenerojuegoSpecificServiceImplementation oEspecialidadService = new GenerojuegoSpecificServiceImplementation(oRequest);
+                GenerojuegoSpecificServiceImplementation oGeneroJuego = new GenerojuegoSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
-                        oReplyBean = oEspecialidadService.getMetaData();
+                        oReplyBean = oGeneroJuego.getMetaData();
                         break;
                     case "getobjectmetadata":
-                        oReplyBean = oEspecialidadService.getObjectMetaData();
+                        oReplyBean = oGeneroJuego.getObjectMetaData();
                         break;
                     case "getpropertiesmetadata":
-                        oReplyBean = oEspecialidadService.getPropertiesMetaData();
+                        oReplyBean = oGeneroJuego.getPropertiesMetaData();
                         break;
                     case "get":
-                        oReplyBean = oEspecialidadService.get();
+                        oReplyBean = oGeneroJuego.get();
                         break;
                     case "set":
-                        oReplyBean = oEspecialidadService.set();
+                        oReplyBean = oGeneroJuego.set();
                         break;
                     case "remove":
-                        oReplyBean = oEspecialidadService.remove();
+                        oReplyBean = oGeneroJuego.remove();
                         break;
                     case "getpage":
-                        oReplyBean = oEspecialidadService.getPage();
+                        oReplyBean = oGeneroJuego.getPage();
                         break;
                     case "getcount":
-                        oReplyBean = oEspecialidadService.getCount();
+                        oReplyBean = oGeneroJuego.getCount();
+                        break;
+                    case "getcountx":
+                        oReplyBean = oGeneroJuego.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oGeneroJuego.getPageX();
                         break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
@@ -336,37 +309,37 @@ public class ServiceFactory {
                 }
                 break;
             case "guia":
-                GuiaSpecificServiceImplementation oDestinoaltaService = new GuiaSpecificServiceImplementation(oRequest);
+                GuiaSpecificServiceImplementation oGuia = new GuiaSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
-                        oReplyBean = oDestinoaltaService.getMetaData();
+                        oReplyBean = oGuia.getMetaData();
                         break;
                     case "getobjectmetadata":
-                        oReplyBean = oDestinoaltaService.getObjectMetaData();
+                        oReplyBean = oGuia.getObjectMetaData();
                         break;
                     case "getpropertiesmetadata":
-                        oReplyBean = oDestinoaltaService.getPropertiesMetaData();
+                        oReplyBean = oGuia.getPropertiesMetaData();
                         break;
                     case "get":
-                        oReplyBean = oDestinoaltaService.get();
+                        oReplyBean = oGuia.get();
                         break;
                     case "set":
-                        oReplyBean = oDestinoaltaService.set();
+                        oReplyBean = oGuia.set();
                         break;
                     case "remove":
-                        oReplyBean = oDestinoaltaService.remove();
+                        oReplyBean = oGuia.remove();
                         break;
                     case "getpage":
-                        oReplyBean = oDestinoaltaService.getPage();
+                        oReplyBean = oGuia.getPage();
                         break;
                     case "getcount":
-                        oReplyBean = oDestinoaltaService.getCount();
+                        oReplyBean = oGuia.getCount();
                         break;
                     case "getcountx":
-                        oReplyBean = oDestinoaltaService.getCountX();
+                        oReplyBean = oGuia.getCountX();
                         break;
                     case "getpagex":
-                        oReplyBean = oDestinoaltaService.getPageX();
+                        oReplyBean = oGuia.getPageX();
                         break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
@@ -374,32 +347,39 @@ public class ServiceFactory {
                 }
                 break;
             case "historia":
-                HistoriaSpecificServiceImplementation oTipopagoService = new HistoriaSpecificServiceImplementation(oRequest);
+                HistoriaSpecificServiceImplementation oHistoriaService = new HistoriaSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
-                        oReplyBean = oTipopagoService.getMetaData();
+                        oReplyBean = oHistoriaService.getMetaData();
                         break;
                     case "getobjectmetadata":
-                        oReplyBean = oTipopagoService.getObjectMetaData();
+                        oReplyBean = oHistoriaService.getObjectMetaData();
                         break;
                     case "getpropertiesmetadata":
-                        oReplyBean = oTipopagoService.getPropertiesMetaData();
+                        oReplyBean = oHistoriaService.getPropertiesMetaData();
                         break;
                     case "get":
-                        oReplyBean = oTipopagoService.get();
+                        oReplyBean = oHistoriaService.get();
                         break;
                     case "set":
-                        oReplyBean = oTipopagoService.set();
+                        oReplyBean = oHistoriaService.set();
                         break;
                     case "remove":
-                        oReplyBean = oTipopagoService.remove();
+                        oReplyBean = oHistoriaService.remove();
                         break;
                     case "getpage":
-                        oReplyBean = oTipopagoService.getPage();
+                        oReplyBean = oHistoriaService.getPage();
                         break;
                     case "getcount":
-                        oReplyBean = oTipopagoService.getCount();
+                        oReplyBean = oHistoriaService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oHistoriaService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oHistoriaService.getPageX();
+                        break;
+
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
@@ -432,43 +412,50 @@ public class ServiceFactory {
                     case "getcount":
                         oReplyBean = oJuegoSpecificService.getCount();
                         break;
+                    case "getcountx":
+                        oReplyBean = oJuegoSpecificService.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oJuegoSpecificService.getPageX();
+                        break;
+
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
             case "noticia":
-                NoticiaSpecificServiceImplementation oSexoService = new NoticiaSpecificServiceImplementation(oRequest);
+                NoticiaSpecificServiceImplementation oNoticia = new NoticiaSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
-                        oReplyBean = oSexoService.getMetaData();
+                        oReplyBean = oNoticia.getMetaData();
                         break;
                     case "getobjectmetadata":
-                        oReplyBean = oSexoService.getObjectMetaData();
+                        oReplyBean = oNoticia.getObjectMetaData();
                         break;
                     case "getpropertiesmetadata":
-                        oReplyBean = oSexoService.getPropertiesMetaData();
+                        oReplyBean = oNoticia.getPropertiesMetaData();
                         break;
                     case "get":
-                        oReplyBean = oSexoService.get();
+                        oReplyBean = oNoticia.get();
                         break;
                     case "set":
-                        oReplyBean = oSexoService.set();
+                        oReplyBean = oNoticia.set();
                         break;
                     case "remove":
-                        oReplyBean = oSexoService.remove();
+                        oReplyBean = oNoticia.remove();
                         break;
                     case "getpage":
-                        oReplyBean = oSexoService.getPage();
+                        oReplyBean = oNoticia.getPage();
                         break;
                     case "getcount":
-                        oReplyBean = oSexoService.getCount();
+                        oReplyBean = oNoticia.getCount();
                         break;
                     case "getcountx":
-                        oReplyBean = oSexoService.getCountX();
+                        oReplyBean = oNoticia.getCountX();
                         break;
                     case "getpagex":
-                        oReplyBean = oSexoService.getPageX();
+                        oReplyBean = oNoticia.getPageX();
                         break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
@@ -476,31 +463,37 @@ public class ServiceFactory {
                 }
                 break;
             case "personaje":
-                PersonajeSpecificServiceImplementation oTipoepisodioService = new PersonajeSpecificServiceImplementation(oRequest);
+                PersonajeSpecificServiceImplementation oPersonaje = new PersonajeSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
-                        oReplyBean = oTipoepisodioService.getMetaData();
+                        oReplyBean = oPersonaje.getMetaData();
                         break;
                     case "getobjectmetadata":
-                        oReplyBean = oTipoepisodioService.getObjectMetaData();
+                        oReplyBean = oPersonaje.getObjectMetaData();
                         break;
                     case "getpropertiesmetadata":
-                        oReplyBean = oTipoepisodioService.getPropertiesMetaData();
+                        oReplyBean = oPersonaje.getPropertiesMetaData();
                         break;
                     case "get":
-                        oReplyBean = oTipoepisodioService.get();
+                        oReplyBean = oPersonaje.get();
                         break;
                     case "set":
-                        oReplyBean = oTipoepisodioService.set();
+                        oReplyBean = oPersonaje.set();
                         break;
                     case "remove":
-                        oReplyBean = oTipoepisodioService.remove();
+                        oReplyBean = oPersonaje.remove();
                         break;
                     case "getpage":
-                        oReplyBean = oTipoepisodioService.getPage();
+                        oReplyBean = oPersonaje.getPage();
                         break;
                     case "getcount":
-                        oReplyBean = oTipoepisodioService.getCount();
+                        oReplyBean = oPersonaje.getCount();
+                        break;
+                    case "getcountx":
+                        oReplyBean = oPersonaje.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oPersonaje.getPageX();
                         break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
@@ -508,37 +501,37 @@ public class ServiceFactory {
                 }
                 break;
             case "plataforma":
-                PlataformaSpecificServiceImplementation oTiposervicioService = new PlataformaSpecificServiceImplementation(oRequest);
+                PlataformaSpecificServiceImplementation oPlataforma = new PlataformaSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
-                        oReplyBean = oTiposervicioService.getMetaData();
+                        oReplyBean = oPlataforma.getMetaData();
                         break;
                     case "getobjectmetadata":
-                        oReplyBean = oTiposervicioService.getObjectMetaData();
+                        oReplyBean = oPlataforma.getObjectMetaData();
                         break;
                     case "getpropertiesmetadata":
-                        oReplyBean = oTiposervicioService.getPropertiesMetaData();
+                        oReplyBean = oPlataforma.getPropertiesMetaData();
                         break;
                     case "get":
-                        oReplyBean = oTiposervicioService.get();
+                        oReplyBean = oPlataforma.get();
                         break;
                     case "set":
-                        oReplyBean = oTiposervicioService.set();
+                        oReplyBean = oPlataforma.set();
                         break;
                     case "remove":
-                        oReplyBean = oTiposervicioService.remove();
+                        oReplyBean = oPlataforma.remove();
                         break;
                     case "getpage":
-                        oReplyBean = oTiposervicioService.getPage();
+                        oReplyBean = oPlataforma.getPage();
                         break;
                     case "getcount":
-                        oReplyBean = oTiposervicioService.getCount();
+                        oReplyBean = oPlataforma.getCount();
                         break;
                     case "getcountx":
-                        oReplyBean = oTiposervicioService.getCountX();
+                        oReplyBean = oPlataforma.getCountX();
                         break;
                     case "getpagex":
-                        oReplyBean = oTiposervicioService.getPageX();
+                        oReplyBean = oPlataforma.getPageX();
                         break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
@@ -546,38 +539,44 @@ public class ServiceFactory {
                 }
                 break;
             case "plataformajuego":
-                PlataformajuegoSpecificServiceImplementation oModalidadepisodioService = new PlataformajuegoSpecificServiceImplementation(oRequest);
+                PlataformajuegoSpecificServiceImplementation oPlataformaJuego = new PlataformajuegoSpecificServiceImplementation(oRequest);
                 switch (op) {
                     case "getmetadata":
-                        oReplyBean = oModalidadepisodioService.getMetaData();
+                        oReplyBean = oPlataformaJuego.getMetaData();
                         break;
                     case "getobjectmetadata":
-                        oReplyBean = oModalidadepisodioService.getObjectMetaData();
+                        oReplyBean = oPlataformaJuego.getObjectMetaData();
                         break;
                     case "getpropertiesmetadata":
-                        oReplyBean = oModalidadepisodioService.getPropertiesMetaData();
+                        oReplyBean = oPlataformaJuego.getPropertiesMetaData();
                         break;
                     case "get":
-                        oReplyBean = oModalidadepisodioService.get();
+                        oReplyBean = oPlataformaJuego.get();
                         break;
                     case "set":
-                        oReplyBean = oModalidadepisodioService.set();
+                        oReplyBean = oPlataformaJuego.set();
                         break;
                     case "remove":
-                        oReplyBean = oModalidadepisodioService.remove();
+                        oReplyBean = oPlataformaJuego.remove();
                         break;
                     case "getpage":
-                        oReplyBean = oModalidadepisodioService.getPage();
+                        oReplyBean = oPlataformaJuego.getPage();
                         break;
                     case "getcount":
-                        oReplyBean = oModalidadepisodioService.getCount();
+                        oReplyBean = oPlataformaJuego.getCount();
+                        break;
+                    case "getcountx":
+                        oReplyBean = oPlataformaJuego.getCountX();
+                        break;
+                    case "getpagex":
+                        oReplyBean = oPlataformaJuego.getPageX();
                         break;
                     default:
                         oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Operation not found : Please contact your administrator"));
                         break;
                 }
                 break;
-            
+
             default:
                 oReplyBean = new ReplyBeanHelper(500, EncodingHelper.quotate("Object not found : Please contact your administrator"));
                 break;

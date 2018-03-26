@@ -5,7 +5,6 @@
  */
 package brainfreeze.bean.specificimplementation;
 
-
 import brainfreeze.bean.genericimplementation.TableGenericBeanImplementation;
 import brainfreeze.bean.helper.MetaBeanHelper;
 import brainfreeze.bean.meta.publicinterface.MetaObjectBeanInterface;
@@ -15,12 +14,10 @@ import brainfreeze.helper.EnumHelper;
 import brainfreeze.helper.constant.RegexConstants;
 import java.util.Date;
 
-
 /**
  *
  * @author a024441493z
  */
-
 @MetaObjectBeanInterface(
         TableName = "Noticia",
         SingularDescription = "Noticia",
@@ -45,8 +42,7 @@ public class NoticiaSpecificBeanImplementation extends TableGenericBeanImplement
             MaxLength = 100
     )
     private Date fechacreacion;
-    
-    
+
     @Expose
     @MetaPropertyBeanInterface(
             ShortName = "Titulo",
@@ -59,8 +55,7 @@ public class NoticiaSpecificBeanImplementation extends TableGenericBeanImplement
             IsForeignKeyDescriptor = true
     )
     private String titulo = "";
-    
-    
+
     @Expose
     @MetaPropertyBeanInterface(
             ShortName = "Texto",
@@ -70,11 +65,11 @@ public class NoticiaSpecificBeanImplementation extends TableGenericBeanImplement
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
             RegexHelp = RegexConstants.capitalizedSentence_Help,
-            IsForeignKeyDescriptor = true
+            IsVisible = false
+            
     )
     private String texto = "";
-    
-    
+
     @Expose(serialize = false)
     @MetaPropertyBeanInterface(
             Type = EnumHelper.FieldType.ForeignId
@@ -92,8 +87,7 @@ public class NoticiaSpecificBeanImplementation extends TableGenericBeanImplement
             Width = 4
     )
     private MetaBeanHelper obj_juego = null;
-    
-    
+
     @Expose(serialize = false)
     @MetaPropertyBeanInterface(
             Type = EnumHelper.FieldType.ForeignId
@@ -111,6 +105,16 @@ public class NoticiaSpecificBeanImplementation extends TableGenericBeanImplement
             Width = 4
     )
     private MetaBeanHelper obj_usuario = null;
+
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Comentario noticia",
+            LongName = "Comentarios de esta noticia",
+            Description = "Comentarios que escriben sobre la noticia",
+            Type = EnumHelper.FieldType.Link,
+            References = "comentarionoticia"
+    )
+    private Integer link_comentarionoticia = null;
 
     public NoticiaSpecificBeanImplementation() {
     }
@@ -175,9 +179,15 @@ public class NoticiaSpecificBeanImplementation extends TableGenericBeanImplement
         this.obj_usuario = obj_usuario;
     }
 
+    public Integer getLink_comentarionoticia() {
+        return link_comentarionoticia;
+    }
+
+    public void setLink_comentarionoticia(Integer link_comentarionoticia) {
+        this.link_comentarionoticia = link_comentarionoticia;
+    }
     
     
     
-    
-    
+
 }

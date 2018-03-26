@@ -37,7 +37,6 @@ import brainfreeze.dao.publicinterface.MetaDaoInterface;
 import brainfreeze.dao.specificimplementation.ClaseSpecificDaoImplementation;
 import brainfreeze.dao.specificimplementation.ComentarioguiaSpecificDaoImplementation;
 import brainfreeze.dao.specificimplementation.ComentarionoticiaSpecificDaoImplementation;
-import brainfreeze.dao.specificimplementation.GeneroSpecificDaoImplementation;
 import brainfreeze.dao.specificimplementation.GenerojuegoSpecificDaoImplementation;
 import brainfreeze.dao.specificimplementation.GuiaSpecificDaoImplementation;
 import brainfreeze.dao.specificimplementation.HistoriaSpecificDaoImplementation;
@@ -73,10 +72,7 @@ public class DaoFactory {
             case "comentarionoticia":
                 oDao = (MetaDaoInterface) new ComentarionoticiaSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
                 break;
-            case "genero":
-                oDao = (MetaDaoInterface) new GeneroSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
-                break;
-            case "generojuego":
+           case "generojuego":
                 oDao = (MetaDaoInterface) new GenerojuegoSpecificDaoImplementation(oConnection, oPuserBean_security, strWhere);
                 break;
             case "guia":

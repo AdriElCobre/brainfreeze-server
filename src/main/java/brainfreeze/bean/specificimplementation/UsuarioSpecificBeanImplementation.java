@@ -38,10 +38,10 @@ public class UsuarioSpecificBeanImplementation extends TableGenericBeanImplement
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedName,
             RegexHelp = RegexConstants.capitalizedName_Help,
-            IsForeignKeyDescriptor = false,
+            IsForeignKeyDescriptor = true,
             Width = 3,
             MaxLength = 100,
-            IsVisible = false
+            IsVisible = true
     )
     private String nombre;
     
@@ -55,7 +55,8 @@ public class UsuarioSpecificBeanImplementation extends TableGenericBeanImplement
             IsRequired = true,
             RegexPattern = RegexConstants.nameWithEndingNumbers,
             RegexHelp = RegexConstants.nameWithEndingNumbers_Help,
-            MaxLength = 15
+            MaxLength = 15,
+            IsVisible = false
     )
     private String login;
 
@@ -125,6 +126,57 @@ public class UsuarioSpecificBeanImplementation extends TableGenericBeanImplement
             Width = 4
     )
     private MetaBeanHelper obj_tipousuario = null;
+    
+    
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Juegos del usuario",
+            LongName = "Juegos del usuario",
+            Description = "Usuarios del usuario",
+            Type = EnumHelper.FieldType.Link,
+            References = "juego"
+    )
+    private Integer link_juego = null;
+    
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Guias del usuario",
+            LongName = "Guias del usuario",
+            Description = "Guias del usuario",
+            Type = EnumHelper.FieldType.Link,
+            References = "guia"
+    )
+    private Integer link_guia = null;
+    
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Comentario del usuario a una guia ",
+            LongName = "Comentarios del usuario en guias ",
+            Description = "Comentarios del usuario en guias ",
+            Type = EnumHelper.FieldType.Link,
+            References = "comentarioguia"
+    )
+    private Integer link_comentarioguia = null;
+    
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Noticias del usuario",
+            LongName = "Noticias del usuario",
+            Description = "Noticias del usuario",
+            Type = EnumHelper.FieldType.Link,
+            References = "noticia"
+    )
+    private Integer link_noticia = null;
+    
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Comentario a una noticia",
+            LongName = "Comentarios del usuario en noticias ",
+            Description = "Comentarios del usuario en noticias ",
+            Type = EnumHelper.FieldType.Link,
+            References = "comentarionoticia"
+    )
+    private Integer link_comentarionoticia = null;
 
     public UsuarioSpecificBeanImplementation() {
     }
@@ -205,6 +257,47 @@ public class UsuarioSpecificBeanImplementation extends TableGenericBeanImplement
         this.obj_tipousuario = obj_tipousuario;
     }
 
+    public Integer getLink_juego() {
+        return link_juego;
+    }
+
+    public void setLink_juego(Integer link_juego) {
+        this.link_juego = link_juego;
+    }
+
+    public Integer getLink_guia() {
+        return link_guia;
+    }
+
+    public void setLink_guia(Integer link_guia) {
+        this.link_guia = link_guia;
+    }
+
+    public Integer getLink_comentarioguia() {
+        return link_comentarioguia;
+    }
+
+    public void setLink_comentarioguia(Integer link_comentarioguia) {
+        this.link_comentarioguia = link_comentarioguia;
+    }
+
+    public Integer getLink_noticia() {
+        return link_noticia;
+    }
+
+    public void setLink_noticia(Integer link_noticia) {
+        this.link_noticia = link_noticia;
+    }
+
+    public Integer getLink_comentarionoticia() {
+        return link_comentarionoticia;
+    }
+
+    public void setLink_comentarionoticia(Integer link_comentarionoticia) {
+        this.link_comentarionoticia = link_comentarionoticia;
+    }
+    
+    
     
     
 }

@@ -42,7 +42,15 @@ public class ClaseSpecificBeanImplementation extends TableGenericBeanImplementat
     )
     private String descripcion = "";
     
-    
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Personajes de la clase",
+            LongName = "Personajes de la clase",
+            Description = "Personajes de la clase",
+            Type = EnumHelper.FieldType.Link,
+            References = "personaje"
+    )
+    private Integer link_personaje = null;
     
 
     public ClaseSpecificBeanImplementation() {
@@ -58,6 +66,14 @@ public class ClaseSpecificBeanImplementation extends TableGenericBeanImplementat
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public Integer getLink_personaje() {
+        return link_personaje;
+    }
+
+    public void setLink_personaje(Integer link_personaje) {
+        this.link_personaje = link_personaje;
     }
 
     

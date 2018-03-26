@@ -41,6 +41,16 @@ public class PlataformaSpecificBeanImplementation extends TableGenericBeanImplem
             IsForeignKeyDescriptor = true
     )
     private String descripcion = "";
+    
+    @Expose(deserialize = false)
+    @MetaPropertyBeanInterface(
+            ShortName = "Plataforma juego",
+            LongName = "Plataformas para ese juego",
+            Description = "Plataformas en la que se juega el juego",
+            Type = EnumHelper.FieldType.Link,
+            References = "plataformajuego"
+    )
+    private Integer link_plataformajuego = null;
 
     public PlataformaSpecificBeanImplementation() {
     }
@@ -55,6 +65,14 @@ public class PlataformaSpecificBeanImplementation extends TableGenericBeanImplem
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public Integer getLink_plataformajuego() {
+        return link_plataformajuego;
+    }
+
+    public void setLink_plataformajuego(Integer link_plataformajuego) {
+        this.link_plataformajuego = link_plataformajuego;
     }
 
     

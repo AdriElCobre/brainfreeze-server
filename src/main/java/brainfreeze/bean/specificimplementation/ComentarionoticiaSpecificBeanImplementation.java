@@ -49,8 +49,8 @@ public class ComentarionoticiaSpecificBeanImplementation extends TableGenericBea
     @Expose
     @MetaPropertyBeanInterface(
             ShortName = "Titulo",
-            LongName = "Titulo de la guia",
-            Description = "Titulo que le ponemos a la guia",
+            LongName = "Titulo de la noticia",
+            Description = "Titulo que le ponemos a la noticia",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,
@@ -63,8 +63,8 @@ public class ComentarionoticiaSpecificBeanImplementation extends TableGenericBea
     @Expose
     @MetaPropertyBeanInterface(
             ShortName = "Texto",
-            LongName = "Texto de la guia",
-            Description = "Texto que forma la guia",
+            LongName = "Texto de la noticia",
+            Description = "Texto que forma la noticia",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
             RegexPattern = RegexConstants.capitalizedSentence,

@@ -43,11 +43,10 @@ public class UsuarioSpecificServiceImplementation extends TableGenericServiceImp
         oDao = DaoFactory.getDao("comentarioguia", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
         hmObjectsMetaData.put("comentarioguia", oDao.getObjectMetaData());
         
-        oDao = DaoFactory.getDao("comentarionoticias", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
-        hmObjectsMetaData.put("comentarionoticias", oDao.getObjectMetaData());
+        oDao = DaoFactory.getDao("comentarionoticia", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
+        hmObjectsMetaData.put("comentarionoticia", oDao.getObjectMetaData());
         
-        oDao = DaoFactory.getDao("genero", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
-        hmObjectsMetaData.put("genero", oDao.getObjectMetaData());
+        
         
         oDao = DaoFactory.getDao("generojuego", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
         hmObjectsMetaData.put("generojuego", oDao.getObjectMetaData());
@@ -70,11 +69,12 @@ public class UsuarioSpecificServiceImplementation extends TableGenericServiceImp
         oDao = DaoFactory.getDao("plataforma", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
         hmObjectsMetaData.put("plataforma", oDao.getObjectMetaData());
         
-        oDao = DaoFactory.getDao("tipousuario", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
-        hmObjectsMetaData.put("tipousuario", oDao.getObjectMetaData());
+        oDao = DaoFactory.getDao("plataformajuego", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
+        hmObjectsMetaData.put("plataformajuego", oDao.getObjectMetaData());
         
-        oDao = DaoFactory.getDao("usuario", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
-        hmObjectsMetaData.put("usuario", oDao.getObjectMetaData());
+//        oDao = DaoFactory.getDao("genero", null, (MetaBeanHelper) oRequest.getSession().getAttribute("user"), null);
+//        hmObjectsMetaData.put("genero", oDao.getObjectMetaData());
+        
         
         
         
