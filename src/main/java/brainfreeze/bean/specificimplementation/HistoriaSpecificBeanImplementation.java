@@ -27,7 +27,19 @@ import java.util.Date;
 )
 
 public class HistoriaSpecificBeanImplementation extends TableGenericBeanImplementation {
-
+    @Expose
+    @MetaPropertyBeanInterface(
+            ShortName = "Tit",
+            LongName = "Título del juego",
+            Description = "Título del juego",
+            Type = EnumHelper.FieldType.String,
+            IsRequired = true,
+            RegexPattern = RegexConstants.capitalizedSentence,
+            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            IsForeignKeyDescriptor = true
+    )
+    private String titulo = "";
+    
     @Expose
     @MetaPropertyBeanInterface(
             ShortName = "Versión",
@@ -132,6 +144,14 @@ public class HistoriaSpecificBeanImplementation extends TableGenericBeanImplemen
 
     public void setObj_juego(MetaBeanHelper obj_juego) {
         this.obj_juego = obj_juego;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     

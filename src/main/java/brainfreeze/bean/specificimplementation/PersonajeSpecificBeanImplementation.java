@@ -60,6 +60,32 @@ public class PersonajeSpecificBeanImplementation extends TableGenericBeanImpleme
     )
     private String descripcion = "";
     
+    @Expose
+    @MetaPropertyBeanInterface(
+            ShortName = "Sex",
+            LongName = "Sex del personaje",
+            Description = "Sexo del personaje de un juego",
+            Type = EnumHelper.FieldType.String,
+            IsRequired = true,
+            RegexPattern = RegexConstants.capitalizedSentence,
+            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            IsForeignKeyDescriptor = true
+    )
+    private String sexo = "";
+    
+     @Expose
+    @MetaPropertyBeanInterface(
+            ShortName = "Raz",
+            LongName = "Raza del personaje",
+            Description = "Raza del personaje de un juego",
+            Type = EnumHelper.FieldType.String,
+            IsRequired = true,
+            RegexPattern = RegexConstants.capitalizedSentence,
+            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            IsForeignKeyDescriptor = true
+    )
+    private String raza = "";
+    
     
     @Expose
     @MetaPropertyBeanInterface(
@@ -172,6 +198,22 @@ public class PersonajeSpecificBeanImplementation extends TableGenericBeanImpleme
 
     public void setObj_clase(MetaBeanHelper obj_clase) {
         this.obj_clase = obj_clase;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getRaza() {
+        return raza;
+    }
+
+    public void setRaza(String raza) {
+        this.raza = raza;
     }
 
     
