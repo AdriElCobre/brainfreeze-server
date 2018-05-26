@@ -80,6 +80,32 @@ public class HistoriaSpecificBeanImplementation extends TableGenericBeanImplemen
             IsForeignKeyDescriptor = true
     )
     private String version = "";
+    
+     @Expose
+    @MetaPropertyBeanInterface(
+            ShortName = "logo",
+            LongName = "Logo del juego",
+            Description = "Logo del juego",
+            Type = EnumHelper.FieldType.String,
+            IsRequired = true,
+            RegexPattern = RegexConstants.capitalizedSentence,
+            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            IsForeignKeyDescriptor = true
+    )
+    private String logo = "";
+     
+      @Expose
+    @MetaPropertyBeanInterface(
+            ShortName = "Caratula",
+            LongName = "Caratula del juego",
+            Description = "Caratula del juego",
+            Type = EnumHelper.FieldType.String,
+            IsRequired = true,
+            RegexPattern = RegexConstants.capitalizedSentence,
+            RegexHelp = RegexConstants.capitalizedSentence_Help,
+            IsForeignKeyDescriptor = true
+    )
+    private String caratula = "";
 
     @Expose(serialize = false)
     @MetaPropertyBeanInterface(
@@ -152,6 +178,22 @@ public class HistoriaSpecificBeanImplementation extends TableGenericBeanImplemen
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
+
+    public String getCaratula() {
+        return caratula;
+    }
+
+    public void setCaratula(String caratula) {
+        this.caratula = caratula;
     }
 
     
