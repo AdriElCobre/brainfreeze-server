@@ -123,6 +123,7 @@ public class JuegoSpecificBeanImplementation extends TableGenericBeanImplementat
             LongName = "Personajes del juego",
             Description = "Personajes del juego",
             Type = EnumHelper.FieldType.Link,
+            IsVisible = false,
             References = "personaje"
     )
     private Integer link_personaje = null;
@@ -133,6 +134,7 @@ public class JuegoSpecificBeanImplementation extends TableGenericBeanImplementat
             LongName = "Versiones del juego",
             Description = "Versiones del juego",
             Type = EnumHelper.FieldType.Link,
+            IsVisible = false,
             References = "historia"
     )
     private Integer link_historia = null;
