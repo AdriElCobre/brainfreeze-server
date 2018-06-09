@@ -49,7 +49,7 @@ public class ComentarioguiaSpecificBeanImplementation extends TableGenericBeanIm
     @Expose
     @MetaPropertyBeanInterface(
             ShortName = "Titulo",
-            LongName = "Titulo de la guia",
+            LongName = "Titulo del comentario",
             Description = "Titulo que le ponemos a la guia",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
@@ -63,7 +63,7 @@ public class ComentarioguiaSpecificBeanImplementation extends TableGenericBeanIm
     @Expose
     @MetaPropertyBeanInterface(
             ShortName = "Texto",
-            LongName = "Texto de la guia",
+            LongName = "Texto del comentario",
             Description = "Texto que forma la guia",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,

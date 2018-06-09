@@ -49,7 +49,7 @@ public class ComentarionoticiaSpecificBeanImplementation extends TableGenericBea
     @Expose
     @MetaPropertyBeanInterface(
             ShortName = "Titulo",
-            LongName = "Titulo de la noticia",
+            LongName = "Titulo del comentario",
             Description = "Titulo que le ponemos a la noticia",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
@@ -63,7 +63,7 @@ public class ComentarionoticiaSpecificBeanImplementation extends TableGenericBea
     @Expose
     @MetaPropertyBeanInterface(
             ShortName = "Texto",
-            LongName = "Texto de la noticia",
+            LongName = "Texto del comentario",
             Description = "Texto que forma la noticia",
             Type = EnumHelper.FieldType.String,
             IsRequired = true,
